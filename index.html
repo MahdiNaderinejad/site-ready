@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Site Ready</title>
+<meta name="description" content="Gamified safety training for high risk trades. Welder, electrician and rigger. Play on a phone in landscape, on a desktop, or in a VR headset.">
+<meta name="theme-color" content="#0e151f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Site Ready">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+  <script type="module" crossorigin src="./assets/index-pOJF_dsu.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D_d91JaG.css">
+</head>
+<body>
+<div id="stage"></div>
+
+<div id="hud" hidden data-mode="none">
+  <div class="hud-top">
+    <div class="hud-left">
+      <span class="chip" id="trackChip">First year</span>
+      <span class="objective" id="objective"></span>
+    </div>
+    <div class="hud-right">
+      <div class="stat"><b id="foundV">0/8</b><span>fixed</span></div>
+      <div class="stat timer" id="timerStat">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="track" cx="18" cy="18" r="15.9"/><circle id="timeRing" class="ring" cx="18" cy="18" r="15.9" pathLength="100"/></svg>
+        <b id="timeV">240</b><span>sec</span>
+      </div>
+      <div class="stat score"><b id="scoreV">0</b><span>points</span></div>
+      <div class="stat rew" id="rewStat"><b id="rewV">0</b><span>rewinds</span></div>
+      <button id="pauseBtn" class="icon-btn" type="button" aria-label="Pause"></button>
+    </div>
+  </div>
+
+  <div id="reticle" data-state=""><i></i><span id="targetLabel"></span></div>
+  <div id="streak" hidden></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="bark" aria-live="polite"><span class="avatar" id="barkAv"></span><p><b id="barkWho"></b><span id="barkText"></span></p></div>
+  <button id="commitBtn" class="commit-btn" type="button" hidden><span id="commitLabel">Light up</span><i aria-hidden="true"></i></button>
+  <button id="zoomChip" class="zoom-chip" type="button" hidden aria-label="Reset zoom">2.0x</button>
+
+  <div id="stickZone" aria-hidden="true">
+    <div id="stickBase"><div id="stickKnob"></div></div>
+    <span class="stick-hint">Move</span>
+  </div>
+  <div class="right-thumb">
+    <button id="hintBtn" class="hint-btn" type="button"><span id="hintIcon"></span><span>Hint</span><small>−30</small></button>
+    <button id="actBtn" class="act-btn" type="button">
+      <svg class="act-ring" viewBox="0 0 36 36" aria-hidden="true"><circle id="actRing" cx="18" cy="18" r="16.5" pathLength="100"/></svg>
+      <span id="actIcon"></span><span id="actLabel">Inspect</span>
+    </button>
+  </div>
+  <div class="keys">W A S D walk · drag to look · scroll to zoom · E inspect · H hint · Esc pause</div>
+</div>
+
+<div id="coach" hidden>
+  <div class="coach-card">
+    <div class="coach-ico" id="coachIco" aria-hidden="true"></div>
+    <div class="coach-txt"><b id="coachTitle"></b><span id="coachText"></span></div>
+    <div class="coach-dots" id="coachDots" aria-hidden="true"></div>
+    <button id="coachSkip" type="button">Skip</button>
+  </div>
+</div>
+
+<div id="cine" hidden><div class="bar top"></div><div class="bar bot"></div><div id="cineCap" role="status" aria-live="polite"></div></div>
+<div id="cineFade"></div>
+<div id="cineFlash"></div>
+<div id="rewindFx" hidden><span>Rewind</span></div>
+
+<div id="overlay" hidden></div>
+
+<div id="rotate" aria-live="polite">
+  <div class="phone" aria-hidden="true"></div>
+  <p>Turn your phone sideways to play</p>
+  <button id="rotateBtn" type="button" hidden>Turn it for me</button>
+  <small>Still upright? Switch off rotation lock.</small>
+</div>
+
+<button id="vrBtn" class="vr-btn" type="button" hidden>Enter VR</button>
+
+<div id="boot">
+  <div class="boot-in">
+    <div class="mark-logo" aria-hidden="true"><span></span></div>
+    <h1>Site Ready</h1>
+    <div class="bar"><i id="bootBar"></i></div>
+    <p id="bootText">Loading</p>
+  </div>
+</div>
+
+</body>
+</html>
